@@ -15,7 +15,6 @@ body{
 .container{
     flex-direction: column;
     align-items: center;
-    width: 500px;  
     margin: auto;
 }
 .imageLogo{
@@ -42,7 +41,7 @@ body{
      border-color: gray ;
      
 }
-.tasks{
+.tasks, .tasksCompleted{
     width: 400px;
     margin-top: 2rem;
     background-color: #ededed;

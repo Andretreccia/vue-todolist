@@ -14,8 +14,11 @@ const app = new Vue({
             'Fare la spesa',
             'Fare il bucato',
         ],
+        tasksCompleted: [
+        ],
         newTask: "",
         error: 0,
+        flag: 0,
         imageLogo: "https://www.boolean.careers/images/misc/logo.png"
     },
     methods: {
@@ -31,6 +34,15 @@ const app = new Vue({
                 this.error = 1
             }
             this.newTask = ""
+        },
+        flagTask(i) {
+            this.tasksCompleted.push(this.tasks[i])
+            this.tasks.splice(i, 1)
+        },
+        returnToDo(i) {
+            this.tasks.push(this.tasksCompleted[i])
+            this.tasksCompleted.splice(i, 1)
         }
+
     }
 })
