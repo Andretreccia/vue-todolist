@@ -10,9 +10,9 @@ const app = new Vue({
     el: '#root',
     data: {
         tasks: [
-            'fare i compiti',
-            'fare la spesa',
-            'fare il bucato',
+            'Fare i compiti',
+            'Fare la spesa',
+            'Fare il bucato',
         ],
         newTask: "",
         error: 0,

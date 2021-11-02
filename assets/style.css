@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: 'Roboto', sans-serif;
+}
 /* utility */
 .flex{
     display: flex;
@@ -13,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     width: 500px;  
+    margin: auto;
 }
 .imageLogo{
     margin: 1rem;
@@ -27,6 +31,7 @@
     width: 250px;
     height: 30px;
     border: 2px solid gray;
+    padding: 0 1rem;
     
 }
 .addTask > button {
@@ -49,4 +54,8 @@
     padding: 1rem;
  justify-content: space-between;
  border-bottom: 1px solid rgb(214, 214, 214);
+ font-weight: bold;
+}
+.deleteTask{
+    cursor: pointer;
 }
