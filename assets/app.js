@@ -13,11 +13,23 @@ const app = new Vue({
             'fare i compiti',
             'fare la spesa',
             'fare il bucato',
-        ]
+        ],
+        newTask: "",
+        error: 0
     },
     methods: {
         removeTask(i) {
             this.tasks.splice(i, 1)
+        },
+        addTask() {
+            if (this.newTask != "") {
+                this.tasks.push(this.newTask)
+                this.error = 0
+            }
+            else {
+                this.error = 1
+            }
+            this.newTask = ""
         }
     }
 })
