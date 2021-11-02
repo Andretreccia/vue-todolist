@@ -50,6 +50,9 @@ const app = new Vue({
         returnToDoTrash(i) {
             this.tasks.push(this.tasksTrash[i])
             this.tasksTrash.splice(i, 1)
+        },
+        emptyTrash(i) {
+            this.tasksTrash.splice(i, this.tasksTrash.length)
         }
     }
 })

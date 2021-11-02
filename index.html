@@ -20,63 +20,74 @@
                 </div>
                 <!--input per aggiungere una nuova task  -->
                 <div class="addTask flex">
-                    <input type="text" placeholder="Nuovo Todo" v-model="newTask">
+                    <input type="text" placeholder="Nuovo To Do" v-model="newTask">
                     <button @click="addTask">Aggiungi</button>
                 </div>
                 <div class="error" v-show="error">
                     <span>Devi scrivere qualcosa</span>
                 </div>
                 <!-- lista delle task -->
-                <div class="tasks flex">
-                    <h2>To do</h2>
-                    <div v-if="tasks.length != 0">
+              
 
-                        <div class="item flex" v-for="(task, index) in tasks">
-                            {{task}}
-                            <div class="flagTask">
-                                <span @click="flagTask(index)"> 
-                                   <i class="fas fa-check-circle"></i>
-                                </span>
-                                
-                            </div>
-                            <div class="deleteTask">
-                                <span @click="removeTask(index)"><i class="fas fa-times"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <span>Nulla da fare</span>
-                    </div>
-                </div>
-                <!-- task completate -->
-                <div class="tasksCompleted flex">
-                    <h2>Completed</h2>
-                    <div v-if="tasksCompleted.length != 0">
-                        <div class="item flex" v-for="(task, index) in tasksCompleted">
-                            {{task}}
-                            <div class="returnToDo">
-                                <span @click="returnToDo(index)"><i class="fas fa-undo"></i></span>
+                    <div class="tasks flex">
+                        <h2>To do</h2>
+                        <div v-if="tasks.length != 0">
+    
+                            <div class="item flex" v-for="(task, index) in tasks">
+                                {{task}}
+                                <div class="flex">
+
+                                    <div class="flagTask">
+                                        <span @click="flagTask(index)"> 
+                                           <i class="fas fa-check-circle"></i>
+                                        </span>
+                                        
+                                    </div>
+                                    <div class="deleteTask">
+                                        <span @click="removeTask(index)"><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div v-else>
-                        <span>Nessuna task completata</span>
-                    </div>
-                </div>
-                 <div class="trash flex">
-                    <h2>Trashed</h2>
-                    <div v-if="tasksTrash.length != 0">
-                        <div class="item flex" v-for="(task, index) in tasksTrash">
-                            {{task}}
-                            <div class="returnToDo">
-                                <span @click="returnToDoTrash(index)"><i class="fas fa-undo"></i></span>
-                            </div>
+                        <div v-else>
+                            <span>Nulla da fare</span>
                         </div>
                     </div>
-                    <div v-else>
-                        <span>Empty bin</span>
+                    <!-- task completate -->
+                    <div class="tasksCompleted flex">
+                        <h2>Completed</h2>
+                        <div v-if="tasksCompleted.length != 0">
+                            <div class="item flex" v-for="(task, index) in tasksCompleted">
+                                {{task}}
+                                <div class="returnToDo">
+                                    <span @click="returnToDo(index)"><i class="fas fa-undo"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <span>Nessuna task completata</span>
+                        </div>
                     </div>
-                </div>
+                     <div class="trash flex">
+                       
+                            <div class="flex cestino">
+                                <h2>Trashed </h2>
+                                <span class="emptyTrash" @click="emptyTrash">Svuota cestino</span>
+                            </div>
+                       
+                        <div v-if="tasksTrash.length != 0">
+                            <div class="item flex" v-for="(task, index) in tasksTrash">
+                                {{task}}
+                                <div class="returnToDo">
+                                    <span @click="returnToDoTrash(index)"><i class="fas fa-trash-restore"></i></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <span>Cestino vuoto</span>
+                        </div>
+                    </div>
+               
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>

@@ -5,12 +5,15 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: lightsteelblue;
 }
 /* utility */
 .flex{
     display: flex;
 }
-
+.flex span{
+    margin: 0 0.5rem;
+}
 /* root */
 .container{
     flex-direction: column;
@@ -42,7 +45,7 @@ body{
      
 }
 .tasks, .tasksCompleted, .trash{
-    width: 400px;
+   width: 400px;
     margin-top: 2rem;
     background-color: #ededed;
     padding: 1rem;
@@ -55,6 +58,10 @@ body{
  border-bottom: 1px solid rgb(214, 214, 214);
  font-weight: bold;
 }
-.deleteTask{
+.deleteTask, .returnToDo, .flagTask, .emptyTrash{
     cursor: pointer;
+}
+.cestino{
+    line-height: 50px;
+    justify-content: space-between;
 }
