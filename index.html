@@ -28,6 +28,7 @@
                 </div>
                 <!-- lista delle task -->
                 <div class="tasks flex">
+                    <h2>To do</h2>
                     <div v-if="tasks.length != 0">
 
                         <div class="item flex" v-for="(task, index) in tasks">
@@ -49,7 +50,8 @@
                 </div>
                 <!-- task completate -->
                 <div class="tasksCompleted flex">
-                    <div v-if="tasks.length != 0">
+                    <h2>Completed</h2>
+                    <div v-if="tasksCompleted.length != 0">
                         <div class="item flex" v-for="(task, index) in tasksCompleted">
                             {{task}}
                             <div class="returnToDo">
@@ -58,7 +60,21 @@
                         </div>
                     </div>
                     <div v-else>
-                        <span>Nulla da fare</span>
+                        <span>Nessuna task completata</span>
+                    </div>
+                </div>
+                 <div class="trash flex">
+                    <h2>Trashed</h2>
+                    <div v-if="tasksTrash.length != 0">
+                        <div class="item flex" v-for="(task, index) in tasksTrash">
+                            {{task}}
+                            <div class="returnToDo">
+                                <span @click="returnToDoTrash(index)"><i class="fas fa-undo"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <span>Empty bin</span>
                     </div>
                 </div>
             </div>

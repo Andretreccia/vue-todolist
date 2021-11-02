@@ -16,14 +16,18 @@ const app = new Vue({
         ],
         tasksCompleted: [
         ],
+        tasksTrash: [
+
+        ],
         newTask: "",
         error: 0,
-        flag: 0,
         imageLogo: "https://www.boolean.careers/images/misc/logo.png"
     },
     methods: {
         removeTask(i) {
+            this.tasksTrash.push(this.tasks[i])
             this.tasks.splice(i, 1)
+
         },
         addTask() {
             if (this.newTask != "") {
@@ -42,7 +46,10 @@ const app = new Vue({
         returnToDo(i) {
             this.tasks.push(this.tasksCompleted[i])
             this.tasksCompleted.splice(i, 1)
+        },
+        returnToDoTrash(i) {
+            this.tasks.push(this.tasksTrash[i])
+            this.tasksTrash.splice(i, 1)
         }
-
     }
 })

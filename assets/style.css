@@ -41,7 +41,7 @@ body{
      border-color: gray ;
      
 }
-.tasks, .tasksCompleted{
+.tasks, .tasksCompleted, .trash{
     width: 400px;
     margin-top: 2rem;
     background-color: #ededed;
