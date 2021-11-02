@@ -9,8 +9,11 @@
 <body>
     <div id="root">
         <div class="tasks">
-            <div class="item" v-for="task in tasks">
+            <div class="item" v-for="(task, index) in tasks">
                 {{task}}
+                <div class="delete-task">
+                            <span @click="removeTask(index)">X</span>
+                        </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
