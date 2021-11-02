@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* utility */
+.flex{
+    display: flex;
+}
+
+/* root */
+.container{
+    flex-direction: column;
+    align-items: center;
+    width: 500px;  
+}
+.imageLogo{
+    margin: 1rem;
+    width: 250px;
+}
+.addTask{
+    width: 350px;
+    justify-content: space-between;
+}
+.addTask > input{
+    border-radius: 0.4rem;
+    width: 250px;
+    height: 30px;
+    border: 2px solid gray;
+    
+}
+.addTask > button {
+     height: 30px;
+     font-size: 10px;
+     padding: 0.4rem 1rem;
+     border-radius: 0.5rem;
+     border-color: gray ;
+     
+}
+.tasks{
+    width: 400px;
+    margin-top: 2rem;
+    background-color: #ededed;
+    padding: 1rem;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+.item{
+    padding: 1rem;
+ justify-content: space-between;
+ border-bottom: 1px solid rgb(214, 214, 214);
+}

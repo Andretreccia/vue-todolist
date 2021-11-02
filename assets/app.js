@@ -15,7 +15,8 @@ const app = new Vue({
             'fare il bucato',
         ],
         newTask: "",
-        error: 0
+        error: 0,
+        imageLogo: "https://www.boolean.careers/images/misc/logo.png"
     },
     methods: {
         removeTask(i) {

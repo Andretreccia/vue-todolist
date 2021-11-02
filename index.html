@@ -4,21 +4,30 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/style.css">
         <title>Document</title>
     </head>
     <body>
         <div id="root">
-            <div class="tasks">
-                <div class="item" v-for="(task, index) in tasks">
-                    {{task}}
-                    <div class="delete-task">
-                        <span @click="removeTask(index)">X</span>
+            <div class="container flex">
+              <!--   sezione per il logo -->
+                <div class="logo">
+                    <img class="imageLogo" :src="imageLogo" alt="">
+                </div>
+                <!--input per aggiungere una nuova task  -->
+                <div class="addTask flex">
+                    <input type="text" v-model="newTask">
+                    <button @click="addTask">Aggiungi</button>
+                </div>
+                <!-- lista delle task -->
+                <div class="tasks flex">
+                    <div class="item flex" v-for="(task, index) in tasks">
+                        {{task}}
+                        <div class="delete-task">
+                            <span @click="removeTask(index)">X</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="addTask">
-                <input type="text" v-model="newTask">
-                <button @click="addTask">New Task</button>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
