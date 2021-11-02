@@ -52,10 +52,12 @@ const app = new Vue({
             this.tasksTrash.splice(i, 1)
         },
         emptyTrash(i) {
+            if (this.tasksTrash.length != 0) {
             userChoice = prompt("Sicuro di voler eliminare tutto definitivamente? Y/N")
             if (userChoice === "Y") {
                 this.tasksTrash.splice(i, this.tasksTrash.length)
             }
         }
+    }
     }
 })
