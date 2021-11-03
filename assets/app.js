@@ -30,7 +30,7 @@ const app = new Vue({
 
         },
         addTask() {
-            if (this.newTask != "") {
+            if (this.newTask != "" && this.newTask.length > 2) {
                 this.tasks.push(this.newTask)
                 this.error = 0
             }
